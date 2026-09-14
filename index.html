@@ -3,518 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
+  <title>SyncGait | Whole-Body Dynamic Motion Refinement</title>
+  <meta name="description" content="SyncGait refines retargeted humanoid motion with trajectory-level quadratic programming, improving contact feasibility and reducing actuator demand.">
+  <meta name="theme-color" content="#16746b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SyncGait: Whole-Body Dynamic Motion Refinement">
+  <meta property="og:description" content="Preserve the motion. Refine the dynamics. Trajectory-level optimization for a 27-DoF humanoid.">
+  <meta property="og:image" content="static/images/syncgait/overview.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <link rel="icon" href="static/images/syncgait/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
 </head>
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container nav-inner"><a class="wordmark" href="#">Sync<span>Gait</span><span class="brand-dot" aria-hidden="true">.</span></a><nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#hardware">Hardware</a></nav><span class="nav-label">RESEARCH PROJECT</span></div></header>
+<main id="main-content">
+<section class="hero publication-hero"><div class="hero-body container is-max-desktop has-text-centered">
+<p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> HUMANOID ROBOTICS · MOTION RETARGETING</p>
+<h1 class="publication-title"><span class="project-name">SyncGait</span><span class="paper-title">A Trajectory-Level QP for Whole-Body<br class="desktop-break"> Dynamic Refinement of Retargeted Humanoid Motion</span></h1>
+<p class="hero-summary">Preserve the motion. <span>Refine the dynamics.</span></p>
+<p class="publication-authors">Anonymous ICRA 2027 Submission</p>
+<div class="publication-links"><a class="button is-rounded primary-button" href="#method">Explore the method <span aria-hidden="true">↗</span></a><a class="button is-rounded secondary-button" href="#results">View results <span aria-hidden="true">↓</span></a></div>
+</div></section>
+<section id="overview" class="section overview-section"><div class="container is-max-desktop">
+<figure class="research-figure overview-figure"><a href="static/images/syncgait/overview.png" target="_blank" rel="noopener" aria-label="Open full-size SyncGait overview"><img src="static/images/syncgait/overview.png" width="1800" height="717" alt="Human source motion is kinematically retargeted to a humanoid, then refined by SyncGait to reduce dynamic residuals, excessive torques, and foot-contact errors." fetchpriority="high"></a><figcaption><span class="figure-label">THE IDEA</span> A lightweight refinement stage between kinematic retargeting and motion tracking. Joint states, torques, and contact forces are optimized together across the full trajectory.</figcaption></figure>
+<div class="metrics"><div><strong>74<span>%</span></strong><p>less foot skating</p><small>General-motion references</small></div><div><strong>0.50<span>°</span></strong><p>median joint deviation</p><small>General-motion refinement</small></div><div><strong>27<span> DoF</span></strong><p>validated on hardware</p><small>Two dance motions</small></div><div><strong>&lt;0.5<span> s</span></strong><p>offline refinement</p><small>~250 frames · desktop CPU</small></div></div>
+</div></section>
+<section class="section soft-section" id="abstract"><div class="container reading-width"><p class="eyebrow">ABSTRACT</p><h2>From plausible poses to better robot references.</h2><div class="content abstract-copy"><p>Kinematic retargeting maps human motion onto a humanoid robot in configuration space. Still, kinematic compatibility does not imply dynamic feasibility: retargeted references can violate floating-base dynamics, exceed actuator limits, and prescribe stance contacts that skate or penetrate the ground. We present SyncGait, a trajectory-level refinement method that converts a kinematic reference into a dynamically admissible motion while preserving its kinematic structure. Refinement is formulated as a weighted projection onto the dynamic-feasibility set in a Riemannian trajectory metric and solved by a damped Sequential Quadratic Programming (SQP) scheme in which every iteration solves a single sparse convex quadratic program (QP) over the full motion horizon, jointly optimizing state corrections, accelerations, actuator torques, and frictional contact forces under full-order rigid-body dynamics, trapezoidal integration, holonomic stance, and actuator limits; high-weight quadratic penalties relax the remaining structural equalities with an explicitly characterized residual. Experiments show that SyncGait substantially improves open-loop contact and dynamic feasibility at small deviation from the source motion, that reinforcement-learning trackers trained on refined references consistently exhibit lower actuator saturation with comparable tracking accuracy, and that these benefits transfer to hardware on a 27 degree-of-freedom humanoid.</p></div></div></section>
+<section class="section" id="method"><div class="container is-max-desktop"><p class="eyebrow">01 / METHOD</p><h2>One trajectory. Coupled dynamics.</h2><p class="section-intro">SyncGait treats dynamic refinement as a weighted local projection: improve physical consistency while staying close to the original retargeted motion.</p>
+<div class="method-grid"><article class="method-card"><span class="step">01</span><h3>Initialize the reference</h3><p>Start with retargeted configurations and a fixed contact schedule. Construct velocities with a sparse least-squares warm start consistent with trapezoidal integration.</p></article><article class="method-card featured"><span class="step">02</span><h3>Solve across the horizon</h3><p>Each damped SQP iteration solves one sparse convex QP, jointly optimizing state corrections, accelerations, torques, and frictional contact forces.</p></article><article class="method-card"><span class="step">03</span><h3>Track the refined motion</h3><p>Use the resulting references for downstream reinforcement-learning trackers. The study evaluates both iFSQ and Transformer policies trained with PPO.</p></article></div>
+<div class="constraint-grid"><div><h3>Hard constraints in the primary QP</h3><p>Actuated dynamics, stance accelerations, joint and actuator limits, friction-pyramid bounds, and minimum support force.</p></div><div><h3>Controlled soft residuals</h3><p>Floating-base dynamics, integration consistency, and stance velocity use high-weight penalties. Under the stated regularity assumptions, relaxed equality residuals decay as O(1/w).</p></div></div>
+<details><summary>Solver details and feasibility</summary><div class="details-content"><p>The outer SQP loop uses damping β = 0.5 and typically takes 2–4 iterations for approximately 250 frames, with fewer than 50 OSQP iterations per subproblem. If the primary QP is infeasible, a fallback softens actuated-dynamics and stance-acceleration equalities while retaining the inequalities.</p><p>Feasibility is approximate because structural constraints are penalty-relaxed. The method assumes contact-consistent initialization, uses a fixed contact schedule, and provides no global convergence guarantee.</p></div></details>
+</div></section>
+<section class="section soft-section" id="results"><div class="container is-max-desktop"><p class="eyebrow">02 / EXPERIMENTS</p><h2>Less actuator demand. Small motion corrections.</h2><p class="section-intro">Evaluated in MuJoCo on 30 general-motion clips from BONES-SEED and 8 video-captured martial-arts clips, using a 27-DoF humanoid with four toe-and-heel contact sites.</p>
+<h3 class="result-heading">Better references before the controller</h3><div class="table-wrap" tabindex="0" role="region" aria-label="Open-loop trajectory quality before and after refinement"><table><caption>Open-loop trajectory quality before and after refinement</caption><thead><tr><th scope="col">Dataset</th><th scope="col">Reference</th><th scope="col">Skating ↓<small>m/s</small></th><th scope="col">Penetration ↓<small>mm</small></th><th scope="col">Joint accel. ↓<small>rad/s²</small></th><th scope="col">Joint jerk ↓<small>rad/s³</small></th><th scope="col">Velocity viol. ↓<small>%</small></th></tr></thead><tbody><tr><th scope="row">General · 30 clips</th><td>Raw</td><td>0.1900</td><td>0.54</td><td>42.99</td><td>1495.91</td><td>2.312</td></tr><tr class="refined"><th scope="row">General · 30 clips</th><td>SyncGait</td><td><strong>0.0501</strong></td><td><strong>0.00</strong></td><td><strong>36.70</strong></td><td><strong>1182.16</strong></td><td><strong>0.004</strong></td></tr><tr><th scope="row">Martial arts · 8 clips</th><td>Raw</td><td>0.1246</td><td><strong>0.00</strong></td><td>18.18</td><td>550.86</td><td>0.908</td></tr><tr class="refined"><th scope="row">Martial arts · 8 clips</th><td>SyncGait</td><td><strong>0.1220</strong></td><td><strong>0.00</strong></td><td><strong>16.05</strong></td><td><strong>433.89</strong></td><td><strong>0.001</strong></td></tr></tbody></table></div>
+<p class="table-note">Lower is better for all metrics. Bold marks the best value within each dataset, including ties. General-motion foot skating falls from 0.1900 to 0.0501 m/s (approximately 74%); martial-arts foot skating remains essentially unchanged.</p>
+<div class="callout"><strong>Preserving the source motion</strong><p>Median RMS joint-angle corrections are 0.50° for general motions and 0.20° for martial arts, with median body-position changes of 22.0 mm and 10.4 mm. Most Cartesian correction comes from floating-base adjustment.</p></div>
+<h3 class="result-heading">Lower saturation across two trackers</h3><div class="table-wrap" tabindex="0" role="region" aria-label="Closed-loop tracking on clips completed by both policies"><table><caption>Closed-loop tracking on clips completed by both policies</caption><thead><tr><th scope="col">Tracker</th><th scope="col">Reference</th><th scope="col">τ-clip ↓<small>N m</small></th><th scope="col">τ-viol ↓<small>%</small></th><th scope="col">MPJPE-PA ↓<small>mm</small></th><th scope="col">MPJPE-L ↓<small>mm</small></th><th scope="col">Root ori. ↓<small>degrees</small></th><th scope="col">MPJPE-WA ↓<small>mm</small></th></tr></thead><tbody><tr><th scope="row">iFSQ</th><td>Kin-only</td><td>12.36 ± 18.62</td><td>25.6 ± 24.2</td><td>37.4 ± 10.0</td><td>50.5 ± 12.0</td><td>7.02 ± 1.86</td><td>336 ± 227</td></tr><tr class="refined"><th scope="row">iFSQ</th><td>SyncGait</td><td><strong>10.85</strong> ± 16.55†</td><td><strong>23.2</strong> ± 23.1†</td><td><strong>35.3</strong> ± 10.0†</td><td><strong>48.1</strong> ± 10.5†</td><td><strong>6.43</strong> ± 1.41†</td><td>343 ± 234</td></tr><tr><th scope="row">Transformer</th><td>Kin-only</td><td>17.22 ± 22.13</td><td>31.7 ± 27.4</td><td><strong>34.2</strong> ± 12.6†</td><td>48.3 ± 12.0</td><td>6.16 ± 1.34</td><td>370 ± 237</td></tr><tr class="refined"><th scope="row">Transformer</th><td>SyncGait</td><td><strong>15.90</strong> ± 20.11†</td><td><strong>29.6</strong> ± 27.0†</td><td>36.1 ± 12.2</td><td>49.4 ± 14.3</td><td>6.23 ± 1.92</td><td>382 ± 262</td></tr></tbody></table></div>
+<p class="table-note">Frame-weighted means ± standard deviation across clips. † Significant paired difference reported in the manuscript. Bold marks only significantly better means within each tracker. Comparisons use only clips completed by both policies (mean duration 28.7 s). τ-clip measures RMS torque removed by saturation; τ-viol counts frames with any commanded torque above its limit.</p>
+<p class="result-context">Global tracking metrics are statistically unchanged. iFSQ improves local tracking; the Transformer has higher self-reference MPJPE-PA after refinement. Against the same original reference, joint-space RMSE decreases for both trackers.</p>
+<details><summary>Dynamic motions across training checkpoints</summary><div class="details-content"><p>On the 8 martial-arts clips (5 trials each), iFSQ is evaluated at four checkpoints from 20k to 50k environment steps. SyncGait lowers τ-clip by 0.19–0.78 N m and torque-limit violations by 0.3–0.9 percentage points at every checkpoint. Tracking varies by checkpoint, with no systematic degradation reported.</p></div></details>
+</div></section>
+<section class="section" id="hardware"><div class="container is-max-desktop"><p class="eyebrow">03 / REAL-WORLD VALIDATION</p><h2>From simulation to the physical humanoid.</h2><p class="section-intro">Matched deployments on two dance motions use the same architecture, training budget, 50 Hz controller, and safety configuration. Only the motion references differ.</p>
+<figure class="research-figure"><a href="static/images/syncgait/hardware.png" target="_blank" rel="noopener" aria-label="Open full-size hardware comparison"><img src="static/images/syncgait/hardware.png" width="2000" height="840" loading="lazy" alt="Matched hardware rollouts at 21, 26, 31, 36, and 41 seconds, with Kin-only above SyncGait, alongside lower joint-position error and over-limit torque rates for both dance motions."></a><figcaption><span class="figure-label">HARDWARE</span> Motion 2 rollouts: Kin-only (top, labeled Raw in the figure) and SyncGait (bottom). Charts compare joint-position RMSE and measured torque-limit exceedances.</figcaption></figure>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Hardware results on two dance motions"><table><caption>Hardware results on two dance motions</caption><thead><tr><th scope="col">Motion</th><th scope="col">Joint RMSE · Kin-only → SyncGait<small>rad ↓</small></th><th scope="col">Over-limit frames · Kin-only → SyncGait<small>% ↓</small></th></tr></thead><tbody><tr><th scope="row">Dance motion 1</th><td>0.2668 → <strong>0.2265</strong></td><td>29.7 → <strong>22.6</strong></td></tr><tr><th scope="row">Dance motion 2</th><td>0.2560 → <strong>0.2431</strong></td><td>29.3 → <strong>24.2</strong></td></tr></tbody></table></div>
+<p class="table-note">Bold marks the lower value for each motion. Over-limit frames contain at least one measured joint torque above its rated limit. These hardware measurements are distinct from commanded-torque saturation in simulation.</p>
+</div></section>
+<section class="section soft-section"><div class="container reading-width"><p class="eyebrow">DISCUSSION</p><h2>Scope and next steps</h2><p>SyncGait is an offline, local refinement method. Its current formulation uses a fixed contact schedule, relaxes some structural equalities, and omits collision constraints. Future work targets contact-sequence optimization, collision-aware refinement, and broader hardware validation.</p><div class="publication-note"><strong>Publication status</strong><p>The supplied manuscript is an anonymous ICRA 2027 submission. Public paper, code, and video links are not provided in the source materials.</p></div></div></section>
+</main>
+<footer class="footer"><div class="container is-max-desktop footer-inner"><a class="wordmark" href="#">Sync<span>Gait</span>.</a><p>Based on the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> and <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>.<br>Website template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p><a class="back-top" href="#">Back to top ↑</a></div></footer>
+</body>
+</html>
